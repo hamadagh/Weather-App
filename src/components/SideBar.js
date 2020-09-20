@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
@@ -20,17 +20,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SideBar() {
+function SideBar({ getWeatherData }) {
   const classes = useStyles();
+
+  const [city, setCity] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await getWeatherData(city);
+  };
 
   return (
     <div className="side-bar">
       <div className="input-form">
-        <InputBase className={classes.input} placeholder="Choose a city" />
+        <InputBase
+          className={classes.input}
+          placeholder="Choose a city"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
         <IconButton
           type="submit"
           className={classes.iconButton}
           aria-label="search"
+          onClick={handleSubmit}
         >
           <Search />
         </IconButton>
