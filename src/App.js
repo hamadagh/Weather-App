@@ -1,7 +1,7 @@
 import React from "react";
-import { useQuery } from "react-query";
 import Main from "./components/Main";
 import SideBar from "./components/SideBar";
+import axios from "axios";
 import "./App.css";
 
 const getWeatherData = async () => {
