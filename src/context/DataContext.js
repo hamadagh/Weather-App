@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import axios from "axios";
 
 export const DataContext = createContext({
   data: null,
@@ -10,7 +11,7 @@ export const DataContext = createContext({
   getWeatherData: () => null,
 });
 
-export const DataProvider = ({ children }) => {
+const DataProvider = ({ children }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -46,3 +47,5 @@ export const DataProvider = ({ children }) => {
     </DataContext.Provider>
   );
 };
+
+export default DataProvider;
