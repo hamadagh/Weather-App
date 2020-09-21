@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
+import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SideBar({ getWeatherData }) {
+function Header({ getWeatherData }) {
   const classes = useStyles();
 
   const [city, setCity] = useState("");
@@ -31,7 +32,11 @@ function SideBar({ getWeatherData }) {
   };
 
   return (
-    <div className="side-bar">
+    <div className="header">
+      <div className="city-details">
+        <span>Berlin / Germany</span>
+        <span>20.09.2020</span>
+      </div>
       <div className="input-form">
         <InputBase
           className={classes.input}
@@ -52,4 +57,4 @@ function SideBar({ getWeatherData }) {
   );
 }
 
-export default SideBar;
+export default Header;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Main from "./components/Main";
-import SideBar from "./components/SideBar";
+import DaysNav from "./components/DaysNav";
 import axios from "axios";
 import "./App.css";
 
@@ -26,8 +26,8 @@ function App() {
 
   return (
     <div className="App">
-      <Main />
-      <SideBar getWeatherData={getWeatherData} />
+      <Main data={data} loading={loading} error={error} />
+      <DaysNav getWeatherData={getWeatherData} data={data} />
     </div>
   );
 }
