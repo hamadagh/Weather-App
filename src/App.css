@@ -4,28 +4,12 @@
 }
 
 .App {
-  display: flex;
   width: 100%;
   height: 100vh;
 }
 
 /* Main component */
 
-.main {
-  width: 70%;
-  background-color: darkgray;
-  height: 100%;
-}
-
 /* Main component */
 
 /* --------------------------------------------- */
-
-/* Side bar component */
-
-.side-bar {
-  width: 30%;
-  height: 100%;
-}
-
-/* Side bar component */
