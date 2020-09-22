@@ -13,3 +13,19 @@
 /* Main component */
 
 /* --------------------------------------------- */
+
+/* Header component */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.city-details {
+  display: flex;
+}
+.input-form {
+}
+/* Header component */
+
+/* --------------------------------------------- */
