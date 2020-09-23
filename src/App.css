@@ -43,3 +43,16 @@
 /* Header component */
 
 /* --------------------------------------------- */
+
+/* DaysNav component */
+
+.days-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+.week-days {
+  display: flex;
+  flex-direction: column;
+}
+
+/* DaysNav component */
