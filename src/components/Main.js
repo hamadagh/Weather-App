@@ -29,9 +29,14 @@ function Main() {
     return (
       <div className="main">
         <div className="weather-details">
-          <span>Temp</span>
-          <span>Day</span>
-          <span>Weather</span>
+          <div className="day-weather">
+            <span className="temperature">13</span>
+          </div>
+          <div className="day-details">
+            <span className="time">16:30</span>
+            <span className="day">Monday</span>
+            <span className="weather-status">Rainy</span>
+          </div>
         </div>
         <DaysNav setData={setData} />
       </div>

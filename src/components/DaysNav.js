@@ -13,7 +13,7 @@ function DaysNav({ setData }) {
     <div className="days-nav">
       <div className="week-days">
         <span>Mon</span>
-        <span>4</span>
+        <span>13</span>
       </div>
       <div className="week-days">
         <span>Tue</span>

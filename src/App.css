@@ -21,6 +21,20 @@
   justify-content: space-around;
 }
 
+.weather-details {
+  display: flex;
+}
+
+.temperature {
+  font-weight: bolder;
+  font-size: 200px;
+}
+.day-details {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
 /* Main component */
 
 /* --------------------------------------------- */
