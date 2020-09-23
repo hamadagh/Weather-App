@@ -16,18 +16,23 @@ function Main() {
   if (data.temp !== null) {
     return (
       <div className="main">
-        <span>{data.temp}</span>
-        <span>{data.day}</span>
-        <span>{data.weather}</span>
+        <div className="weather-details">
+          <span>{data.temp}</span>
+          <span>{data.day}</span>
+          <span>{data.weather}</span>
+        </div>
+
         <DaysNav setData={setData} />
       </div>
     );
   } else {
     return (
       <div className="main">
-        <span>Temp</span>
-        <span>Day</span>
-        <span>Weather</span>
+        <div className="weather-details">
+          <span>Temp</span>
+          <span>Day</span>
+          <span>Weather</span>
+        </div>
         <DaysNav setData={setData} />
       </div>
     );
