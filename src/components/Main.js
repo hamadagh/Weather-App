@@ -11,10 +11,6 @@ function Main() {
   });
   const { data, loading, error } = useContext(DataContext);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   if (dayData.temp !== null) {
     return (
       <div className="main">
