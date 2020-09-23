@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DaysNav from "./DaysNav";
 import "../App.css";
+import DataContext from "../context/DataContext";
 
 function Main() {
-  const [data, setData] = useState({
+  const [dayData, setDayData] = useState({
     temp: null,
     day: null,
     weather: null,
   });
+  const { data, loading, error } = useContext(DataContext);
 
   useEffect(() => {
     console.log(data);
   }, [data]);
 
-  if (data.temp !== null) {
+  if (dayData.temp !== null) {
     return (
       <div className="main">
         <div className="weather-details">
-          <span>{data.temp}</span>
-          <span>{data.day}</span>
-          <span>{data.weather}</span>
+          <span>{dayData.temp}</span>
+          <span>{dayData.day}</span>
+          <span>{dayData.weather}</span>
         </div>
 
-        <DaysNav setData={setData} />
+        <DaysNav setDayData={setDayData} />
       </div>
     );
   } else {
@@ -38,7 +40,7 @@ function Main() {
             <span className="weather-status">Rainy</span>
           </div>
         </div>
-        <DaysNav setData={setData} />
+        <DaysNav setDayData={setDayData} data={data} />
       </div>
     );
   }
