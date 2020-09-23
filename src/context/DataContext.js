@@ -20,7 +20,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const key = process.env.REACT_APP_API_KEY;
-      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}`;
+      const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${key}`;
       const res = await axios.get(url);
       setData(res);
       console.log(res);

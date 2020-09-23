@@ -8,36 +8,44 @@ function DaysNav({ setDayData, data }) {
       weather: "Sunny",
     });
   };
+  const date = new Date();
+  const day = date.getDay();
+  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const slicedWeekDays1 = weekDays.slice(day);
+  const slicedWeekDays2 = weekDays.slice(0, day);
+  const finalDays = slicedWeekDays1.concat(slicedWeekDays2);
+
   if (data) {
     console.log(data);
+
     return (
       <div className="days-nav">
         <div className="week-days">
-          <span>Mon</span>
+          <span>{finalDays[0]}</span>
           <span>13</span>
         </div>
         <div className="week-days">
-          <span>Tue</span>
+          <span>{finalDays[1]}</span>
           <span>2</span>
         </div>
         <div className="week-days">
-          <span>Wed</span>
+          <span>{finalDays[2]}</span>
           <span>1</span>
         </div>
         <div className="week-days">
-          <span>Thu</span>
+          <span>{finalDays[3]}</span>
           <span>4</span>
         </div>
         <div className="week-days">
-          <span>Fri</span>
+          <span>{finalDays[4]}</span>
           <span>6</span>
         </div>
         <div className="week-days">
-          <span>Sat</span>
+          <span>{finalDays[5]}</span>
           <span>8</span>
         </div>
         <div className="week-days">
-          <span>Sun</span>
+          <span>{finalDays[6]}</span>
           <span>10</span>
         </div>
       </div>
@@ -46,31 +54,31 @@ function DaysNav({ setDayData, data }) {
   return (
     <div className="days-nav">
       <div className="week-days">
-        <span>Mon</span>
+        <span>{finalDays[0]}</span>
         <span>13</span>
       </div>
       <div className="week-days">
-        <span>Tue</span>
+        <span>{finalDays[1]}</span>
         <span>2</span>
       </div>
       <div className="week-days">
-        <span>Wed</span>
+        <span>{finalDays[2]}</span>
         <span>1</span>
       </div>
       <div className="week-days">
-        <span>Thu</span>
+        <span>{finalDays[3]}</span>
         <span>4</span>
       </div>
       <div className="week-days">
-        <span>Fri</span>
+        <span>{finalDays[4]}</span>
         <span>6</span>
       </div>
       <div className="week-days">
-        <span>Sat</span>
+        <span>{finalDays[5]}</span>
         <span>8</span>
       </div>
       <div className="week-days">
-        <span>Sun</span>
+        <span>{finalDays[6]}</span>
         <span>10</span>
       </div>
     </div>
