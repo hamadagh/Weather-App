@@ -1,10 +1,21 @@
 import React, { useState, useContext } from "react";
 import Main from "./Main";
 import DataContext from "../context/DataContext";
-import Paper from "@material-ui/core/Paper";
+import Chip from "@material-ui/core/Chip";
+import { makeStyles } from "@material-ui/core/styles";
 import "../App.css";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "60px",
+    height: "100px",
+    textAlign: "center",
+  },
+}));
+
 const DaysNav = () => {
+  const classes = useStyles();
+
   const [dailyWeather, setDailyWeather] = useState({
     temp: null,
     day: null,
@@ -28,8 +39,9 @@ const DaysNav = () => {
       <div className="main-container">
         <Main dailyWeather={dailyWeather} />
         <div className="days-nav">
-          <Paper
-            elevation={1}
+          <Chip
+            className={classes.root}
+            variant="outlined"
             onClick={() => {
               setDailyWeather({
                 temp: dailyWeatherList[0],
@@ -37,37 +49,115 @@ const DaysNav = () => {
                 weather: dailyWeatherList[0].weather.description,
               });
             }}
-          >
-            <div className="week-days">
-              <span>{finalDays[0]}</span>
-              <span>{Math.ceil(dailyWeatherList[0].temp)}</span>
-            </div>
-          </Paper>
-
-          <div className="week-days">
-            <span>{finalDays[1]}</span>
-            <span>{Math.ceil(dailyWeatherList[1].temp)}</span>
-          </div>
-          <div className="week-days">
-            <span>{finalDays[2]}</span>
-            <span>{Math.ceil(dailyWeatherList[2].temp)}</span>
-          </div>
-          <div className="week-days">
-            <span>{finalDays[3]}</span>
-            <span>{Math.ceil(dailyWeatherList[3].temp)}</span>
-          </div>
-          <div className="week-days">
-            <span>{finalDays[4]}</span>
-            <span>{Math.ceil(dailyWeatherList[4].temp)}</span>
-          </div>
-          <div className="week-days">
-            <span>{finalDays[5]}</span>
-            <span>{Math.ceil(dailyWeatherList[5].temp)}</span>
-          </div>
-          <div className="week-days">
-            <span>{finalDays[6]}</span>
-            <span>{Math.ceil(dailyWeatherList[6].temp)}</span>
-          </div>
+            label={
+              <div className="week-days">
+                <span>{finalDays[0]}</span>
+                <span>{Math.ceil(dailyWeatherList[0].temp)}</span>
+              </div>
+            }
+          />
+          <Chip
+            className={classes.root}
+            variant="outlined"
+            onClick={() => {
+              setDailyWeather({
+                temp: dailyWeatherList[1],
+                day: finalDays[1],
+                weather: dailyWeatherList[1].weather.description,
+              });
+            }}
+            label={
+              <div className="week-days">
+                <span>{finalDays[1]}</span>
+                <span>{Math.ceil(dailyWeatherList[1].temp)}</span>
+              </div>
+            }
+          />
+          <Chip
+            className={classes.root}
+            variant="outlined"
+            onClick={() => {
+              setDailyWeather({
+                temp: dailyWeatherList[2],
+                day: finalDays[2],
+                weather: dailyWeatherList[2].weather.description,
+              });
+            }}
+            label={
+              <div className="week-days">
+                <span>{finalDays[2]}</span>
+                <span>{Math.ceil(dailyWeatherList[2].temp)}</span>
+              </div>
+            }
+          />
+          <Chip
+            className={classes.root}
+            variant="outlined"
+            onClick={() => {
+              setDailyWeather({
+                temp: dailyWeatherList[3],
+                day: finalDays[3],
+                weather: dailyWeatherList[3].weather.description,
+              });
+            }}
+            label={
+              <div className="week-days">
+                <span>{finalDays[3]}</span>
+                <span>{Math.ceil(dailyWeatherList[3].temp)}</span>
+              </div>
+            }
+          />
+          <Chip
+            className={classes.root}
+            variant="outlined"
+            onClick={() => {
+              setDailyWeather({
+                temp: dailyWeatherList[4],
+                day: finalDays[4],
+                weather: dailyWeatherList[4].weather.description,
+              });
+            }}
+            label={
+              <div className="week-days">
+                <span>{finalDays[4]}</span>
+                <span>{Math.ceil(dailyWeatherList[4].temp)}</span>
+              </div>
+            }
+          />
+          <Chip
+            className={classes.root}
+            variant="outlined"
+            onClick={() => {
+              setDailyWeather({
+                temp: dailyWeatherList[5],
+                day: finalDays[5],
+                weather: dailyWeatherList[5].weather.description,
+              });
+            }}
+            label={
+              <div className="week-days">
+                <span>{finalDays[5]}</span>
+                <span>{Math.ceil(dailyWeatherList[5].temp)}</span>
+              </div>
+            }
+          />
+          <Chip
+            className={classes.root}
+            variant="outlined"
+            onClick={() => {
+              setDailyWeather({
+                temp: dailyWeatherList[6],
+                day: finalDays[6],
+                weather: dailyWeatherList[6].weather.description,
+              });
+            }}
+            label={
+              <div className="week-days">
+                <span>{finalDays[6]}</span>
+                <span>{Math.ceil(dailyWeatherList[6].temp)}</span>
+              </div>
+            }
+          />
         </div>
       </div>
     );

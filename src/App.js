@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import { DataProvider } from "./context/DataContext";
-import "./App.css";
 import DaysNav from "./components/DaysNav";
+import "./App.css";
 
 function App() {
   return (
