@@ -1,13 +1,13 @@
 import React from "react";
 import { DataProvider } from "./context/DataContext";
-import DaysNav from "./components/DaysNav";
+import Main from "./components/Main";
 import "./App.css";
 
 function App() {
   return (
     <DataProvider>
       <div className="App">
-        <DaysNav />
+        <Main />
       </div>
     </DataProvider>
   );

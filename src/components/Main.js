@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import Main from "./Main";
+import DayDetails from "./DayDetails";
 import Header from "./Header";
 import DataContext from "../context/DataContext";
 import Chip from "@material-ui/core/Chip";
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DaysNav = () => {
+const Main = () => {
   const classes = useStyles();
 
   const [dailyWeather, setDailyWeather] = useState({
@@ -40,7 +40,7 @@ const DaysNav = () => {
     return (
       <div className="main-container">
         <Header />
-        <Main dailyWeather={dailyWeather} />
+        <DayDetails dailyWeather={dailyWeather} />
         <div className="days-nav">
           <Chip
             className={classes.root}
@@ -172,4 +172,4 @@ const DaysNav = () => {
   );
 };
 
-export default DaysNav;
+export default Main;

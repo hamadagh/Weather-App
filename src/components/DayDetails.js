@@ -1,11 +1,11 @@
 import React from "react";
 import "../App.css";
 
-function Main({ dailyWeather }) {
+function DayDetails({ dailyWeather }) {
   if (dailyWeather.temp !== null) {
     console.log(dailyWeather);
     return (
-      <div className="main">
+      <div className="container">
         <div className="weather-details">
           <div className="day-weather">
             <span className="temperature">
@@ -21,8 +21,8 @@ function Main({ dailyWeather }) {
       </div>
     );
   } else {
-    return <div className="main"></div>;
+    return <div className="container"></div>;
   }
 }
 
-export default Main;
+export default DayDetails;
