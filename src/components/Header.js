@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header({ value }) {
+function Header({ value, error }) {
   const classes = useStyles();
   const [city, setCity] = useState("");
 
@@ -32,7 +32,8 @@ function Header({ value }) {
     e.preventDefault();
     await getWeatherData(city);
   };
-  if (data !== null) {
+
+  if (data) {
     return (
       <div className="header">
         <div className="city-details">

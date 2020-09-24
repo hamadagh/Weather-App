@@ -22,8 +22,11 @@ export const DataProvider = ({ children }) => {
       const key = process.env.REACT_APP_API_KEY;
       const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${key}`;
       const res = await axios.get(url);
-      setData(res);
-      console.log(res);
+      if (res.status === 200) {
+        setData(res);
+      } else if (res.status === 204) {
+        setError("not found");
+      }
     } catch (error) {
       setError(error);
     } finally {

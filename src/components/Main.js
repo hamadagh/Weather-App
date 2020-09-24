@@ -29,12 +29,28 @@ const Main = () => {
   const slicedWeekDays2 = weekDays.slice(0, day);
   const finalDays = slicedWeekDays1.concat(slicedWeekDays2);
 
-  if (data) {
+  if (error) {
+    return (
+      <div className="main-container">
+        <Header value={value} error={error} />
+        <span className="error message">Please check your city name !</span>
+      </div>
+    );
+  } else if (loading === true) {
+    return (
+      <div className="main-container">
+        <Header value={value} error={error} />
+        <div className="circular-progress">
+          <CircularProgress color="secondary" />
+        </div>
+      </div>
+    );
+  } else if (data) {
     const dailyWeatherList = data.data.data;
 
     return (
       <div className="main-container">
-        <Header value={value} />
+        <Header value={value} error={error} />
         <DayDetails value={value} />
         <div className="days-nav">
           <Chip
@@ -131,19 +147,10 @@ const Main = () => {
         </div>
       </div>
     );
-  } else if (loading === true) {
-    return (
-      <div className="main-container">
-        <Header />
-        <div className="circular-progress">
-          <CircularProgress color="secondary" />
-        </div>
-      </div>
-    );
   } else {
     return (
       <div className="main-container">
-        <Header />
+        <Header value={value} error={error} />
         <div className="days-nav"></div>
         <div className="weather-details"></div>
       </div>

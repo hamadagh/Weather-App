@@ -20,7 +20,7 @@ function DayDetails({ value }) {
   const slicedWeekDays2 = weekDays.slice(0, day);
   const finalDays = slicedWeekDays1.concat(slicedWeekDays2);
 
-  if (data !== null) {
+  if (data) {
     return (
       <div className="container">
         <div className="weather-details">
