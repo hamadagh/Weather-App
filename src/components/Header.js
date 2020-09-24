@@ -22,42 +22,67 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header() {
+function Header({ cityAndDate }) {
   const classes = useStyles();
   const [city, setCity] = useState("");
-  const [cityName, setCityName] = useState("City Name");
-  const { getWeatherData } = useContext(DataContext);
+
+  const { getWeatherData, data } = useContext(DataContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await getWeatherData(city);
-    setCityName(city);
   };
-
-  return (
-    <div className="header">
-      <div className="city-details">
-        <span>{cityName}</span>
-        <span>20.09.2020</span>
+  if (data !== null) {
+    return (
+      <div className="header">
+        <div className="city-details">
+          <span>{data.data.city_name}</span>
+          <span>{data.data.data[0].datetime}</span>
+        </div>
+        <div className="input-form">
+          <InputBase
+            className={classes.input}
+            placeholder="Choose a city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <IconButton
+            type="submit"
+            className={classes.iconButton}
+            aria-label="search"
+            onClick={handleSubmit}
+          >
+            <Search />
+          </IconButton>
+        </div>
       </div>
-      <div className="input-form">
-        <InputBase
-          className={classes.input}
-          placeholder="Choose a city"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <IconButton
-          type="submit"
-          className={classes.iconButton}
-          aria-label="search"
-          onClick={handleSubmit}
-        >
-          <Search />
-        </IconButton>
+    );
+  } else {
+    return (
+      <div className="header">
+        <div className="city-details">
+          <span>City</span>
+          <span>Date</span>
+        </div>
+        <div className="input-form">
+          <InputBase
+            className={classes.input}
+            placeholder="Choose a city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <IconButton
+            type="submit"
+            className={classes.iconButton}
+            aria-label="search"
+            onClick={handleSubmit}
+          >
+            <Search />
+          </IconButton>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Header;

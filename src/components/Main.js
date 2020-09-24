@@ -4,6 +4,7 @@ import Header from "./Header";
 import DataContext from "../context/DataContext";
 import Chip from "@material-ui/core/Chip";
 import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,10 @@ const Main = () => {
     day: null,
     weather: null,
   });
+  const [cityAndDate, setCityAndDate] = useState({
+    cityName: null,
+    date: null,
+  });
   const { data, loading, error } = useContext(DataContext);
 
   const date = new Date();
@@ -33,13 +38,11 @@ const Main = () => {
   const finalDays = slicedWeekDays1.concat(slicedWeekDays2);
 
   if (data) {
-    console.log(data);
     const dailyWeatherList = data.data.data;
-    console.log(dailyWeatherList);
 
     return (
       <div className="main-container">
-        <Header />
+        <Header cityAndDate={cityAndDate} />
         <DayDetails dailyWeather={dailyWeather} />
         <div className="days-nav">
           <Chip
@@ -164,12 +167,24 @@ const Main = () => {
         </div>
       </div>
     );
+  } else if (loading === true) {
+    return (
+      <div className="main-container">
+        <Header />
+        <div className="circular-progress">
+          <CircularProgress color="secondary" />
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="main-container">
+        <Header />
+        <div className="days-nav"></div>
+        <div className="weather-details"></div>
+      </div>
+    );
   }
-  return (
-    <div className="main-container">
-      <Header />
-    </div>
-  );
 };
 
 export default Main;
