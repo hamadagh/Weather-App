@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Header from "./components/Header";
+import React from "react";
 import { DataProvider } from "./context/DataContext";
 import DaysNav from "./components/DaysNav";
 import "./App.css";
@@ -8,7 +7,6 @@ function App() {
   return (
     <DataProvider>
       <div className="App">
-        <Header />
         <DaysNav />
       </div>
     </DataProvider>

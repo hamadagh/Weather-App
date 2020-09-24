@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import Main from "./Main";
+import Header from "./Header";
 import DataContext from "../context/DataContext";
 import Chip from "@material-ui/core/Chip";
 import { makeStyles } from "@material-ui/core/styles";
@@ -38,6 +39,7 @@ const DaysNav = () => {
 
     return (
       <div className="main-container">
+        <Header />
         <Main dailyWeather={dailyWeather} />
         <div className="days-nav">
           <Chip
@@ -163,7 +165,11 @@ const DaysNav = () => {
       </div>
     );
   }
-  return <div className="days-nav"></div>;
+  return (
+    <div className="main-container">
+      <Header />
+    </div>
+  );
 };
 
 export default DaysNav;

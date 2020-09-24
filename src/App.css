@@ -13,15 +13,7 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* Main component */
-
-.main-container {
-  display: flex;
-  height: 90vh;
-  width: 100%;
-  flex-direction: column;
-  justify-content: space-around;
-}
+/* DayDetails component */
 
 .weather-details {
   display: flex;
@@ -37,7 +29,7 @@
   align-self: center;
 }
 
-/* Main component */
+/* DayDetails component */
 
 /* --------------------------------------------- */
 
@@ -48,6 +40,8 @@
   justify-content: space-between;
   width: 100%;
   height: 10vh;
+  position: fixed;
+  top: 20px;
 }
 .city-details {
   display: flex;
@@ -61,6 +55,14 @@
 /* --------------------------------------------- */
 
 /* DaysNav component */
+
+.main-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 .days-nav {
   display: flex;
