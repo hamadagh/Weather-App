@@ -17,8 +17,7 @@
 
 .weather-details {
   display: flex;
-  justify-content: start;
-  text-align: start;
+  justify-content: flex-start;
   align-self: center;
 }
 
@@ -81,9 +80,9 @@
   flex-direction: column;
 }
 .circular-progress {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* Main component */

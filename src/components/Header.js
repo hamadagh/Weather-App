@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header({ cityAndDate }) {
+function Header({ value }) {
   const classes = useStyles();
   const [city, setCity] = useState("");
 
@@ -37,7 +37,7 @@ function Header({ cityAndDate }) {
       <div className="header">
         <div className="city-details">
           <span>{data.data.city_name}</span>
-          <span>{data.data.data[0].datetime}</span>
+          <span>{data.data.data[value].datetime}</span>
         </div>
         <div className="input-form">
           <InputBase

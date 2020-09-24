@@ -19,15 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const Main = () => {
   const classes = useStyles();
 
-  const [dailyWeather, setDailyWeather] = useState({
-    temp: null,
-    day: null,
-    weather: null,
-  });
-  const [cityAndDate, setCityAndDate] = useState({
-    cityName: null,
-    date: null,
-  });
+  const [value, setValue] = useState(0);
   const { data, loading, error } = useContext(DataContext);
 
   const date = new Date();
@@ -42,18 +34,14 @@ const Main = () => {
 
     return (
       <div className="main-container">
-        <Header cityAndDate={cityAndDate} />
-        <DayDetails dailyWeather={dailyWeather} />
+        <Header value={value} />
+        <DayDetails value={value} />
         <div className="days-nav">
           <Chip
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[0],
-                day: finalDays[0],
-                weather: dailyWeatherList[0].weather.description,
-              });
+              setValue(0);
             }}
             label={
               <div className="week-days">
@@ -66,11 +54,7 @@ const Main = () => {
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[1],
-                day: finalDays[1],
-                weather: dailyWeatherList[1].weather.description,
-              });
+              setValue(1);
             }}
             label={
               <div className="week-days">
@@ -83,11 +67,7 @@ const Main = () => {
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[2],
-                day: finalDays[2],
-                weather: dailyWeatherList[2].weather.description,
-              });
+              setValue(2);
             }}
             label={
               <div className="week-days">
@@ -100,11 +80,7 @@ const Main = () => {
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[3],
-                day: finalDays[3],
-                weather: dailyWeatherList[3].weather.description,
-              });
+              setValue(3);
             }}
             label={
               <div className="week-days">
@@ -117,11 +93,7 @@ const Main = () => {
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[4],
-                day: finalDays[4],
-                weather: dailyWeatherList[4].weather.description,
-              });
+              setValue(4);
             }}
             label={
               <div className="week-days">
@@ -134,11 +106,7 @@ const Main = () => {
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[5],
-                day: finalDays[5],
-                weather: dailyWeatherList[5].weather.description,
-              });
+              setValue(5);
             }}
             label={
               <div className="week-days">
@@ -151,11 +119,7 @@ const Main = () => {
             className={classes.root}
             variant="outlined"
             onClick={() => {
-              setDailyWeather({
-                temp: dailyWeatherList[6],
-                day: finalDays[6],
-                weather: dailyWeatherList[6].weather.description,
-              });
+              setValue(6);
             }}
             label={
               <div className="week-days">
