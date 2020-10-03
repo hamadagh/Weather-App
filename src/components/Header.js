@@ -34,11 +34,14 @@ function Header({ value }) {
   };
 
   if (data) {
+    const city = data.data.city_name;
+    const date = data.data.data[value].datetime;
+    const reversedDate = date.split("-").reverse().join("-");
     return (
       <div className="header">
         <div className="city-details">
-          <span className="city">{data.data.city_name}</span>
-          <span className="date">{data.data.data[value].datetime}</span>
+          <span className="city">{city}</span>
+          <span className="date">{reversedDate}</span>
         </div>
         <div className="input-form">
           <InputBase
@@ -62,8 +65,8 @@ function Header({ value }) {
     return (
       <div className="header">
         <div className="city-details">
-          <span className="city">City</span>
-          <span className="date">Date</span>
+          <span className="city"></span>
+          <span className="date"></span>
         </div>
         <div className="input-form">
           <InputBase
