@@ -30,7 +30,7 @@ function DayDetails({ value }) {
             </span>
           </div>
           <div className="day-details">
-            <span className="time">16:30</span>
+            <span className="degree">°C</span>
             <span className="day">{finalDays[value]}</span>
             <span className="weather-status">
               {data.data.data[value].weather.description}
