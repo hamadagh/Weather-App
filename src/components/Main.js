@@ -21,6 +21,7 @@ const Main = () => {
 
   const [value, setValue] = useState(0);
   const { data, loading, error } = useContext(DataContext);
+  console.log(data);
 
   const date = new Date();
   const day = date.getDay();
