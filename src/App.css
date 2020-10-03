@@ -108,11 +108,11 @@
   margin-left: auto;
 }
 .bg-image {
-  background-image: url(./img/undraw_weather_app_i5sm.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 70%;
   height: 100%;
+  background-image: url(./img/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 /* Main component */
