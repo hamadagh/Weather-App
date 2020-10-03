@@ -150,10 +150,9 @@ const Main = () => {
     );
   } else {
     return (
-      <div className="main-container">
+      <div className="second-container">
         <Header value={value} error={error} />
-        <div className="days-nav"></div>
-        <div className="weather-details"></div>
+        <div className="bg-image"></div>
       </div>
     );
   }

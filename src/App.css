@@ -83,6 +83,12 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+.second-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
 
 .days-nav {
   display: flex;
@@ -100,5 +106,13 @@
   margin-bottom: auto;
   margin-right: auto;
   margin-left: auto;
+}
+.bg-image {
+  background-image: url(./img/undraw_weather_app_i5sm.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70%;
+  height: 100%;
 }
 /* Main component */
