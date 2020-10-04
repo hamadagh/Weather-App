@@ -33,7 +33,10 @@ const Main = () => {
     return (
       <div className="main-container">
         <Header value={value} error={error} />
-        <span className="error message">Please check your city name !</span>
+        <div className="error-container">
+          <div className="error-bg"></div>
+          <span className="error-message">Please check your city name !</span>
+        </div>
       </div>
     );
   } else if (loading === true) {

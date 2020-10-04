@@ -24,6 +24,7 @@ export const DataProvider = ({ children }) => {
       const res = await axios.get(url);
       if (res.status === 200) {
         setData(res);
+        setError(null);
       } else if (res.status === 204) {
         setError("not found");
       }
