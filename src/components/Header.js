@@ -31,16 +31,17 @@ function Header({ value }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await getWeatherData(city);
+    setCity("");
   };
 
   if (data) {
-    const city = data.data.city_name;
+    const cityName = data.data.city_name;
     const date = data.data.data[value].datetime;
     const reversedDate = date.split("-").reverse().join("-");
     return (
       <div className="header">
         <div className="city-details">
-          <span className="city">{city}</span>
+          <span className="city">{cityName}</span>
           <span className="date">{reversedDate}</span>
         </div>
         <div className="input-form">
