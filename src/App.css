@@ -46,13 +46,37 @@
 }
 
 .icons {
-  height: 100%;
-  width: 50%;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: contain;
+  background-repeat: no-repeat;
+  height: 80%;
+  width: 50%;
 }
 
+.thunder-storm {
+  background-image: url(./img/weather-icons/partly-cloudy-rainy.png);
+}
+.cloudy {
+  background-image: url(./img/weather-icons/cloudy.png);
+}
+.partly-cloudy {
+  background-image: url(./img/weather-icons/partly-cloudy.png);
+}
+.partly-rainy {
+  background-image: url(./img/weather-icons/partly-cloudy-rainy.png);
+}
+.partly-snowy {
+  background-image: url(./img/weather-icons/partly-cloudy-snowy.png);
+}
+.rainy {
+  background-image: url(./img/weather-icons/rainy.png);
+}
+.snowy {
+  background-image: url(./img/weather-icons/snowy.png);
+}
+.clear-sky {
+  background-image: url(./img/weather-icons/sunny.png);
+}
 /* DayDetails component */
 
 /* --------------------------------------------- */
