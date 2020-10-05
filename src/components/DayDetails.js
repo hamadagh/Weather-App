@@ -21,22 +21,27 @@ function DayDetails({ value }) {
   const finalDays = slicedWeekDays1.concat(slicedWeekDays2);
 
   if (data) {
+    console.log(data);
+    const dayTemp = data.data.data[value].temp;
+    const weatherStatus = data.data.data[value].weather.description;
+    const iconCode = data.data.data[value].weather.icon;
+    console.log(iconCode);
     return (
       <div className="container">
         <div className="weather-details">
           <div className="day-weather">
-            <span className="temperature">
-              {Math.ceil(data.data.data[value].temp)}
-            </span>
+            <span className="temperature">{Math.ceil(dayTemp)}</span>
           </div>
           <div className="day-details">
             <span className="degree">°C</span>
             <span className="day">{finalDays[value]}</span>
-            <span className="weather-status">
-              {data.data.data[value].weather.description}
-            </span>
+            <span className="weather-status">{weatherStatus}</span>
           </div>
         </div>
+        <div
+          className="icons"
+          style={{ backgroundImage: `url(./img/icons/${iconCode}.png)` }}
+        ></div>
       </div>
     );
   } else {

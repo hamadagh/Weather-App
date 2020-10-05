@@ -155,6 +155,9 @@ const Main = () => {
       <div className="second-container">
         <Header value={value} error={error} />
         <div className="bg-image"></div>
+        <span className="bg-quote">
+          Choose your city and get weather forecast for a week
+        </span>
       </div>
     );
   }
