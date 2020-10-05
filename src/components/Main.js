@@ -20,6 +20,7 @@ const Main = () => {
   const classes = useStyles();
 
   const [value, setValue] = useState(0);
+
   const { data, loading, error } = useContext(DataContext);
 
   const date = new Date();
