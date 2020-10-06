@@ -32,8 +32,12 @@ function Header({ value }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await getWeatherData(city);
-    setCity("");
+    if (city.trim() === "") {
+      return null;
+    } else {
+      await getWeatherData(city);
+      setCity("");
+    }
   };
 
   if (data) {
@@ -50,6 +54,7 @@ function Header({ value }) {
           <InputBase
             className={classes.input}
             placeholder="Choose a city"
+            required
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
