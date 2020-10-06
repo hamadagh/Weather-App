@@ -52,7 +52,6 @@ function DayDetails({ value }) {
   const iconCode = data.data.data[value].weather.code;
 
   setIconCode(iconCode);
-
   if (data) {
     const dayTemp = data.data.data[value].temp;
     const weatherStatus = data.data.data[value].weather.description;

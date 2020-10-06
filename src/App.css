@@ -87,11 +87,17 @@
 .header {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 98%;
   height: 10vh;
   position: fixed;
   top: 0px;
+  right: 0px;
+  left: 0px;
   z-index: 11;
+  background-color: #e84b3c;
+  margin: 5px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .city-details {
   display: flex;
@@ -109,8 +115,9 @@
 }
 .city,
 .date {
-  font-weight: bolder;
+  font-weight: 400;
   font-size: 20px;
+  color: white;
 }
 /* Header component */
 

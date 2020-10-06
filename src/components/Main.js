@@ -59,6 +59,7 @@ const Main = () => {
         <div className="days-nav">
           <Chip
             className={classes.root}
+            color="secondary"
             variant="outlined"
             onClick={() => {
               setValue(0);
@@ -72,6 +73,7 @@ const Main = () => {
           />
           <Chip
             className={classes.root}
+            color="primary"
             variant="outlined"
             onClick={() => {
               setValue(1);
@@ -85,6 +87,7 @@ const Main = () => {
           />
           <Chip
             className={classes.root}
+            color="primary"
             variant="outlined"
             onClick={() => {
               setValue(2);
@@ -98,6 +101,7 @@ const Main = () => {
           />
           <Chip
             className={classes.root}
+            color="primary"
             variant="outlined"
             onClick={() => {
               setValue(3);
@@ -111,6 +115,7 @@ const Main = () => {
           />
           <Chip
             className={classes.root}
+            color="primary"
             variant="outlined"
             onClick={() => {
               setValue(4);
@@ -124,6 +129,7 @@ const Main = () => {
           />
           <Chip
             className={classes.root}
+            color="primary"
             variant="outlined"
             onClick={() => {
               setValue(5);
@@ -137,6 +143,7 @@ const Main = () => {
           />
           <Chip
             className={classes.root}
+            color="primary"
             variant="outlined"
             onClick={() => {
               setValue(6);
