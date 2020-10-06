@@ -81,7 +81,7 @@ function DayDetails({ value }) {
             {` `}
             {humidity}
           </p>
-          <br></br>
+
           <p className="footer-details">
             <span className="footer-label">Pressure:</span>
             {` `}
@@ -93,7 +93,7 @@ function DayDetails({ value }) {
             {` `}
             {windSpeed}
           </p>
-          <br></br>
+
           <p className="footer-details">
             <span className="footer-label">Wind Direction:</span>
             {` `}
