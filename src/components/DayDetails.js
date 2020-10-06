@@ -55,6 +55,10 @@ function DayDetails({ value }) {
   if (data) {
     const dayTemp = data.data.data[value].temp;
     const weatherStatus = data.data.data[value].weather.description;
+    const humidity = data.data.data[value].rh;
+    const pressure = data.data.data[value].pres;
+    const windSpeed = data.data.data[value].wind_spd;
+    const windDirection = data.data.data[value].wind_cdir_full;
 
     return (
       <div className="container">
@@ -71,7 +75,31 @@ function DayDetails({ value }) {
           </div>
           <div className={`icons ${iconClass}`} id="icons"></div>
         </div>
-        <div className="footer-container"></div>
+        <div className="footer-container">
+          <p className="footer-details">
+            <span className="footer-label">Humidity:</span>
+            {` `}
+            {humidity}
+          </p>
+          <br></br>
+          <p className="footer-details">
+            <span className="footer-label">Pressure:</span>
+            {` `}
+            {pressure}
+          </p>
+
+          <p className="footer-details">
+            <span className="footer-label">Wind Speed:</span>
+            {` `}
+            {windSpeed}
+          </p>
+          <br></br>
+          <p className="footer-details">
+            <span className="footer-label">Wind Direction:</span>
+            {` `}
+            {windDirection}
+          </p>
+        </div>
       </div>
     );
   } else {
